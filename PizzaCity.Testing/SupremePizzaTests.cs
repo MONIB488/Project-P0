@@ -10,24 +10,24 @@ namespace PizzaCity.Testing
         private void Test_PizzaExists()
         {
             //arrange
-            var sut = new MeatPizza(); //inference
-            MeatPizza sut1 = new MeatPizza(); //memory allocation
+            var sut = new SupremePizza(); //inference
+            SupremePizza sut1 = new SupremePizza(); //memory allocation
             
 
             //act
             var actual = sut;
 
             //assert
-            Assert.IsType<MeatPizza>(actual);
+            Assert.IsType<SupremePizza>(actual);
             Assert.NotNull(actual);
         }
 
         [Fact]
         private void HasASize()
         {
-            var sut = new MeatPizza();
+            var sut = new SupremePizza();
             var actual = sut;
-            Assert.IsType<MeatPizza>(actual.Size);
+            Assert.IsType<SupremePizza>(actual.Size);
         }
     }
 }

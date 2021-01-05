@@ -1,20 +1,25 @@
 using System.Collections.Generic;
+using PizzaCity.Domain.Abstracts;
+using System.ComponentModel.DataAnnotations;
 
 namespace PizzaCity.Domain.Models
 {
-    public class Store
+    public class Store : APizzaModel
     {
+        public string Name {get; set;}
         public List<Order> Orders {get; set;}
+        public long StoreID {get; set;}
+
+        public Store()
+        {
+            Orders = new List<Order>();
+        }
 
       //method to create order
-      public void CreateOrder()
+      public void CreateOrder(List<APizzaModel> Pizzas)
       {
-        Orders.Add(new Order());
+        Orders.Add(new Order(Pizzas));
       }
-
-      //method to read order
-
-      //method to update order
 
       //method to delete order
       bool DeleteOrder(Order order)
@@ -31,6 +36,16 @@ namespace PizzaCity.Domain.Models
               return false;
           }
       }
+
+        public override string ToString()
+        {
+            return $"{Name}";
+        }
+
+
+
+
+      
 
        
       

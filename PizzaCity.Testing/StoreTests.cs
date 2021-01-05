@@ -19,5 +19,14 @@ namespace PizzaCity.Testing
             Assert.IsType<Store>(actual);
             Assert.NotNull(actual);
         }
+
+        [Fact]
+        private void OrderExists()
+        {
+            var sut = new Store();
+            var actual = sut;
+
+            Assert.IsType<Order>(actual.Orders);
+        }
     }
 }

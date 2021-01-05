@@ -4,10 +4,9 @@ using System.Text;
 
 namespace PizzaCity.Domain.Models
 {
-    public class MeatPizza : APizzaModel
+    public class CheesePizza : APizzaModel
     {
-        
-          public MeatPizza(Size size, Crust crust)
+          public CheesePizza(Size size, Crust crust)
           {
               AddName();
               AddSize(size);
@@ -16,9 +15,9 @@ namespace PizzaCity.Domain.Models
               CalculatePrice();
           }
 
-          public MeatPizza()
+          public CheesePizza()
           {
-          Name = "Three Meat Pizza";
+          Name = "Three Cheese Pizza";
           Crust = new Crust();
           Size = new Size();
           Toppings = new List<Toppings>();
@@ -35,16 +34,15 @@ namespace PizzaCity.Domain.Models
           }
 
           protected override void AddName()
-          {Name = "Three Meat Pizza";}
+          {Name = "Three Cheese Pizza";}
 
           protected override void AddToppings()
           {
             Toppings = new List<Toppings>()
             {
-                new Toppings("mozzarella"),
-                new Toppings("bacon"),
-                new Toppings("pepperoni"),
-                new Toppings("italian sausage")
+                new Toppings("parmesan cheese"),
+                new Toppings("sharp cheddar"),
+                new Toppings("mozzarella")
             };
           }
     }

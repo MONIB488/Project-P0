@@ -4,30 +4,30 @@ using PizzaCity.Domain.Abstracts;
 
 namespace PizzaCity.Testing
 {
-    public class PizzaTests
+    public class TestToppings
     {
         [Fact]
-        private void Test_PizzaExists()
+        private void Test_ToppingsExists()
         {
             //arrange
-            var sut = new MeatPizza(); //inference
-            MeatPizza sut1 = new MeatPizza(); //memory allocation
+            var sut = new Toppings(); //inference
+            Toppings sut1 = new Toppings(); //memory allocation
             
 
             //act
             var actual = sut;
 
             //assert
-            Assert.IsType<MeatPizza>(actual);
+            Assert.IsType<Toppings>(actual);
             Assert.NotNull(actual);
         }
 
         [Fact]
-        private void HasASize()
+        private void HasToppingData()
         {
-            var sut = new MeatPizza();
+            var sut = new Toppings();
             var actual = sut;
-            Assert.IsType<MeatPizza>(actual.Size);
+            Assert.IsType<Toppings>(actual.Name);
         }
     }
 }

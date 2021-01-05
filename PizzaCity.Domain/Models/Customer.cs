@@ -1,28 +1,27 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using PizzaCity.Domain.Abstracts;
 
 namespace PizzaCity.Domain.Models
 {
     public class Customer
     {
       public List<Order> Orders {get; set;}
-
-      public Store SelectedStore {get; set;}
+      public long CustID {get; set;}
+      public string Name {get; set;}
+      
 
       public Customer()
       {
           Orders = new List<Order>();
+          Name = "";
       }
 
-        public override string ToString()
+        public Customer(string name)
         {
-            var sb = new StringBuilder();
-            foreach (var p in Orders.Last().Pizzas)
-            {
-                sb.AppendLine(p.ToString());
-            }
-            return $"I have chosen this store: {SelectedStore} and ordered these pizzas: {sb.ToString()}";
+            Orders = new List<Order>();
+            Name = name;
         }
     }
 }
